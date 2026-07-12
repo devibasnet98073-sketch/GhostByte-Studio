@@ -516,3 +516,17 @@ border-color:transparent;
         margin:12px 0;
     }
 }
+/* ===========================
+   SCROLL REVEAL
+=========================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
