@@ -614,4 +614,93 @@ requestAnimationFrame(update);
 
 }
 
-update();
+let animationId;
+
+function update(){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    drawPlayer();
+
+    drawEnemies();
+
+    animationId=requestAnimationFrame(update);
+
+}
+const enemies = [];
+
+document.addEventListener("keydown",(e)=>{
+    if(e.key==="ArrowLeft" && player.x>0){
+        player.x-=player.speed;
+    }
+
+    if(e.key==="ArrowRight" && player.x<canvas.width-player.w){
+        player.x+=player.speed;
+    }
+});
+
+function spawnEnemy(){
+
+    enemies.push({
+        x:Math.random()*(canvas.width-30),
+        y:-30,
+        w:30,
+        h:30,
+        speed:2+Math.random()*3
+    });
+
+}
+
+setInterval(spawnEnemy,1000);
+
+function drawEnemies(){
+
+    ctx.fillStyle="red";
+
+    for(let i=enemies.length-1;i>=0;i--){
+
+        let e=enemies[i];
+
+        e.y+=e.speed;
+
+        ctx.fillRect(e.x,e.y,e.w,e.h);
+
+        if(
+            player.x<e.x+e.w &&
+            player.x+player.w>e.x &&
+            player.y<e.y+e.h &&
+            player.y+player.h>e.y
+        ){
+
+            enemies.splice(i,1);
+
+            lives--;
+
+            livesText.textContent=lives;
+
+            if(lives<=0){
+
+                result.innerHTML=
+                `💀 Game Over<br>Final Score: ${score}`;
+
+                cancelAnimationFrame(animationId);
+
+                return;
+
+            }
+
+        }
+
+        if(e.y>canvas.height){
+
+            enemies.splice(i,1);
+
+            score++;
+
+            scoreText.textContent=score;
+
+        }
+
+    }
+
+}
