@@ -366,3 +366,4 @@ function typeEffect(){
 }
 
 typeEffect();
+r
