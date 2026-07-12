@@ -594,3 +594,32 @@ border-color:transparent;
 #restartMemory:hover{
     transform:scale(1.05);
 }
+.memory-scoreboard{
+    width:320px;
+    margin:30px auto;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(10px);
+}
+
+.memory-scoreboard h3{
+    color:#00d4ff;
+    margin-bottom:15px;
+}
+
+.memory-scoreboard p{
+    color:#fff;
+    font-size:18px;
+}
+
+#clearMemoryScore{
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
