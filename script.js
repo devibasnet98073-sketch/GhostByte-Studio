@@ -216,3 +216,56 @@ console.log("%cDeveloped by Shambhu Khatri", "color:#9b5cff;font-size:16px;");
 }
 
         }
+/* ===========================
+Back To Top
+=========================== */
+
+const topBtn=document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.documentElement.scrollTop>250){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+/* ===========================
+Dark / Light Mode
+=========================== */
+
+const themeBtn=document.getElementById("themeBtn");
+
+themeBtn.onclick=function(){
+
+document.body.classList.toggle("light");
+
+if(document.body.classList.contains("light")){
+
+themeBtn.innerHTML="☀";
+
+}else{
+
+themeBtn.innerHTML="🌙";
+
+}
+
+    }
