@@ -79,3 +79,140 @@ btn.addEventListener("mouseleave", () => {
 // Console Message
 console.log("%cWelcome to GhostByte Studio", "color:#00e5ff;font-size:22px;font-weight:bold;");
 console.log("%cDeveloped by Shambhu Khatri", "color:#9b5cff;font-size:16px;");
+/* ===========================
+   SECTION TITLE
+=========================== */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:#00e5ff;
+    font-family:'Orbitron',sans-serif;
+    letter-spacing:2px;
+}
+
+/* ===========================
+   ABOUT SECTION
+=========================== */
+
+#about{
+    padding:100px 8%;
+}
+
+.about-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.about-card{
+    max-width:850px;
+    width:100%;
+    padding:40px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:20px;
+    transition:.4s;
+    box-shadow:0 0 30px rgba(0,229,255,.08);
+}
+
+.about-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 35px rgba(0,229,255,.35);
+}
+
+.about-card h3{
+    color:#00e5ff;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.about-card p{
+    color:#d5d5d5;
+    line-height:1.8;
+}
+
+.info{
+    margin-top:30px;
+}
+
+.info p{
+    margin:12px 0;
+}
+
+.info a{
+    color:#00e5ff;
+    text-decoration:none;
+}
+
+.info a:hover{
+    color:#8b5cf6;
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+
+#projects{
+    padding:100px 8%;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(15px);
+    padding:35px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.03);
+    box-shadow:0 0 35px rgba(0,229,255,.35);
+}
+
+.card h3{
+    color:#00e5ff;
+    margin-bottom:15px;
+}
+
+.card p{
+    color:#d5d5d5;
+    line-height:1.7;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+.about-card{
+    padding:25px;
+}
+
+.about-card h3{
+    font-size:1.6rem;
+}
+
+.section-title h2{
+    font-size:2rem;
+}
+
+.cards{
+    grid-template-columns:1fr;
+}
+
+        }
