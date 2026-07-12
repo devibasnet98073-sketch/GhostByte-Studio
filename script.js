@@ -536,3 +536,35 @@ function flipCard(card){
 restartBtn.addEventListener("click",startMemoryGame);
 
 startMemoryGame();
+const bestMoves = document.getElementById("bestMoves");
+const clearMemoryScore = document.getElementById("clearMemoryScore");
+
+function loadBestScore(){
+    const score = localStorage.getItem("memoryBestMoves");
+
+    if(score){
+        bestMoves.textContent = score;
+    }else{
+        bestMoves.textContent = "--";
+    }
+}
+
+function saveBestScore(currentMoves){
+
+    const old = localStorage.getItem("memoryBestMoves");
+
+    if(old === null || currentMoves < Number(old)){
+        localStorage.setItem("memoryBestMoves", currentMoves);
+        bestMoves.textContent = currentMoves;
+    }
+
+}
+
+clearMemoryScore.onclick = () =>{
+
+    localStorage.removeItem("memoryBestMoves");
+    bestMoves.textContent = "--";
+
+};
+
+loadBestScore();
