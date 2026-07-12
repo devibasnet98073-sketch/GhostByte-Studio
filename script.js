@@ -383,3 +383,32 @@ document.querySelectorAll("#navMenu a").forEach(link => {
         navMenu.classList.remove("show");
     });
 });
+/* ===========================
+   SCROLL REVEAL
+=========================== */
+
+const reveals = document.querySelectorAll(
+"#about,#projects,#museum,#stats,#contact,#showcase"
+);
+
+function revealSections(){
+
+    reveals.forEach(section=>{
+
+        const top = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if(top < windowHeight - 120){
+
+            section.classList.add("reveal");
+            section.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",revealSections);
+
+revealSections();
