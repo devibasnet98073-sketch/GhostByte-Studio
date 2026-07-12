@@ -660,3 +660,63 @@ font-size:22px;
 font-weight:bold;
 color:#00ffcc;
 }
+/* Final Website Polish */
+
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+.footer{
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    margin-top:50px;
+
+    background:rgba(255,255,255,0.05);
+
+    border-top:1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.footer a{
+
+    color:#00e5ff;
+
+    text-decoration:none;
+
+}
+
+
+
+.footer h3{
+
+    font-size:28px;
+
+}
+
+
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:1s;
+
+}
+
+
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
