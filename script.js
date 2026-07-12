@@ -412,3 +412,127 @@ function revealSections(){
 window.addEventListener("scroll",revealSections);
 
 revealSections();
+const icons = [
+"🚀","🚀",
+"👾","👾",
+"💎","💎",
+"🤖","🤖",
+"⚡","⚡",
+"🎮","🎮",
+"🛸","🛸",
+"💀","💀"
+];
+
+const grid = document.getElementById("memoryGrid");
+const movesText = document.getElementById("moves");
+const matchedText = document.getElementById("matched");
+const restartBtn = document.getElementById("restartMemory");
+
+let firstCard = null;
+let secondCard = null;
+let lock = false;
+let moves = 0;
+let matched = 0;
+
+function shuffle(array){
+    return array.sort(()=>Math.random()-0.5);
+}
+
+function startMemoryGame(){
+
+    grid.innerHTML="";
+    firstCard=null;
+    secondCard=null;
+    lock=false;
+    moves=0;
+    matched=0;
+
+    movesText.textContent=0;
+    matchedText.textContent=0;
+
+    shuffle([...icons]).forEach(icon=>{
+
+        const card=document.createElement("div");
+
+        card.className="memory-card";
+        card.dataset.icon=icon;
+        card.innerHTML="?";
+
+        card.onclick=()=>flipCard(card);
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+function flipCard(card){
+
+    if(lock) return;
+    if(card.classList.contains("flip")) return;
+    if(card.classList.contains("matched")) return;
+
+    card.classList.add("flip");
+    card.innerHTML=card.dataset.icon;
+
+    if(!firstCard){
+
+        firstCard=card;
+        return;
+
+    }
+
+    secondCard=card;
+
+    lock=true;
+    moves++;
+
+    movesText.textContent=moves;
+
+    if(firstCard.dataset.icon===secondCard.dataset.icon){
+
+        firstCard.classList.add("matched");
+        secondCard.classList.add("matched");
+
+        matched++;
+
+        matchedText.textContent=matched;
+
+        firstCard=null;
+        secondCard=null;
+        lock=false;
+
+        if(matched===8){
+
+            setTimeout(()=>{
+
+                alert("🎉 Congratulations! You completed the Memory Game!");
+
+            },300);
+
+        }
+
+    }else{
+
+        setTimeout(()=>{
+
+            firstCard.classList.remove("flip");
+            secondCard.classList.remove("flip");
+
+            firstCard.innerHTML="?";
+            secondCard.innerHTML="?";
+
+            firstCard=null;
+            secondCard=null;
+
+            lock=false;
+
+        },800);
+
+    }
+
+}
+
+restartBtn.addEventListener("click",startMemoryGame);
+
+startMemoryGame();
