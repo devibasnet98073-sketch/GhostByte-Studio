@@ -442,3 +442,26 @@ font-family:Orbitron,sans-serif;
 color:#ddd;
 
 }
+#typing{
+
+color:#00e5ff;
+
+font-family:Orbitron,sans-serif;
+
+border-right:3px solid cyan;
+
+padding-right:5px;
+
+animation:blink .8s infinite;
+
+}
+
+@keyframes blink{
+
+50%{
+
+border-color:transparent;
+
+}
+
+}
