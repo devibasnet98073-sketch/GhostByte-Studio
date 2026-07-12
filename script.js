@@ -269,3 +269,40 @@ themeBtn.innerHTML="🌙";
 }
 
     }
+// ===== Counter Animation =====
+
+function counter(id,end){
+
+let value=0;
+
+const speed=20;
+
+const obj=document.getElementById(id);
+
+const timer=setInterval(()=>{
+
+value++;
+
+obj.innerHTML=value+"+";
+
+if(value>=end){
+
+clearInterval(timer);
+
+}
+
+},speed);
+
+}
+
+window.addEventListener("load",()=>{
+
+counter("projectCount",12);
+
+counter("skillCount",15);
+
+counter("coffeeCount",350);
+
+counter("ideaCount",500);
+
+});
