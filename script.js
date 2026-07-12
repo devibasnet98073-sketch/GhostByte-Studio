@@ -704,3 +704,62 @@ function drawEnemies(){
     }
 
 }
+// Final GhostByte Studio Finish
+
+
+// Auto Year
+
+document.getElementById("year").innerText =
+new Date().getFullYear();
+
+
+
+// Scroll Reveal
+
+let reveals =
+document.querySelectorAll(".reveal");
+
+
+function reveal(){
+
+    for(let i=0;i<reveals.length;i++){
+
+        let windowHeight =
+        window.innerHeight;
+
+
+        let elementTop =
+        reveals[i].getBoundingClientRect().top;
+
+
+        if(elementTop < windowHeight-100){
+
+            reveals[i].classList.add("active");
+
+        }
+
+    }
+
+}
+
+
+window.addEventListener(
+    "scroll",
+    reveal
+);
+
+
+reveal();
+
+
+
+// Website Loaded
+
+window.addEventListener(
+"load",
+()=>{
+
+document.body.classList.add("loaded");
+
+}
+);
