@@ -568,3 +568,50 @@ clearMemoryScore.onclick = () =>{
 };
 
 loadBestScore();
+const canvas=document.getElementById("gameCanvas");
+const ctx=canvas.getContext("2d");
+
+let score=0;
+let lives=3;
+
+const scoreText=document.getElementById("score");
+const livesText=document.getElementById("lives");
+const result=document.getElementById("gameResult");
+
+const player={
+x:160,
+y:450,
+w:35,
+h:35,
+speed:7
+};
+
+function drawPlayer(){
+
+ctx.fillStyle="#00ffff";
+
+ctx.fillRect(
+player.x,
+player.y,
+player.w,
+player.h
+);
+
+}
+
+function update(){
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+drawPlayer();
+
+requestAnimationFrame(update);
+
+}
+
+update();
