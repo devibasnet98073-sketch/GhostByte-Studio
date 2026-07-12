@@ -478,3 +478,41 @@ border-color:transparent;
     z-index:-3;
     pointer-events:none;
 }
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.menu-btn{
+    display:none;
+    font-size:30px;
+    color:#00e5ff;
+    cursor:pointer;
+}
+
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:70px;
+        right:20px;
+        width:220px;
+        background:#0b1224;
+        border-radius:12px;
+        padding:15px;
+        box-shadow:0 0 20px rgba(0,229,255,.3);
+    }
+
+    nav ul.show{
+        display:flex;
+    }
+
+    nav ul li{
+        margin:12px 0;
+    }
+}
