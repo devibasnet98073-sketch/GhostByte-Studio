@@ -622,4 +622,41 @@ border-color:transparent;
     border-radius:10px;
     cursor:pointer;
     font-weight:bold;
+.space-game{
+text-align:center;
+margin:80px auto;
+}
+
+#gameCanvas{
+background:#000;
+border:2px solid #00ffff;
+border-radius:15px;
+margin-top:20px;
+max-width:100%;
+}
+
+.game-info{
+display:flex;
+justify-content:center;
+gap:30px;
+margin:20px;
+font-size:20px;
+color:white;
+}
+
+#restartGame{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+}
+
+#gameResult{
+margin-top:20px;
+font-size:22px;
+font-weight:bold;
+color:#00ffcc;
 }
