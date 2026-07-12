@@ -530,3 +530,67 @@ border-color:transparent;
     opacity:1;
     transform:translateY(0);
 }
+.memory-section{
+    margin-top:60px;
+    text-align:center;
+}
+
+.memory-info{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin:20px;
+    color:white;
+    font-size:18px;
+}
+
+.memory-grid{
+    display:grid;
+    grid-template-columns:repeat(4,90px);
+    gap:15px;
+    justify-content:center;
+}
+
+.memory-card{
+    width:90px;
+    height:90px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:15px;
+    cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:35px;
+    transition:.4s;
+    transform-style:preserve-3d;
+}
+
+.memory-card:hover{
+    transform:scale(1.05);
+}
+
+.memory-card.flip{
+    background:#00d4ff;
+    color:#000;
+}
+
+.memory-card.matched{
+    background:#00ff99;
+    color:#000;
+}
+
+#restartMemory{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:12px;
+    background:#00d4ff;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#restartMemory:hover{
+    transform:scale(1.05);
+}
