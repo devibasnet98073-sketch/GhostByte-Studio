@@ -278,3 +278,108 @@ footer{
 footer strong{
     color:#00e5ff;
 }
+/* ===========================
+   TOP BUTTON
+=========================== */
+
+#topBtn{
+
+position:fixed;
+bottom:25px;
+right:25px;
+
+width:55px;
+height:55px;
+
+border:none;
+border-radius:50%;
+
+background:#00e5ff;
+
+color:#000;
+
+font-size:22px;
+
+cursor:pointer;
+
+display:none;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+#topBtn:hover{
+
+transform:scale(1.15);
+
+box-shadow:0 0 25px cyan;
+
+}
+
+/* ===========================
+   THEME BUTTON
+=========================== */
+
+#themeBtn{
+
+position:fixed;
+
+bottom:95px;
+
+right:25px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#8b5cf6;
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+#themeBtn:hover{
+
+transform:rotate(180deg);
+
+}
+
+/* Light Theme */
+
+.light{
+
+background:#ffffff !important;
+
+color:#111 !important;
+
+}
+
+.light nav{
+
+background:white;
+
+}
+
+.light .card,
+.light .about-card,
+.light .museum-card{
+
+background:#f3f3f3;
+
+color:#111;
+
+}
